@@ -36,9 +36,6 @@ has the freedesktop.org specification.
 if [ ! -d %{buildroot}/%{_libdir} ]; then
 mv %{buildroot}/usr/lib %{buildroot}/%{_libdir}
 fi
-#install -Dm 0755 %{buildroot}/usr/lib/xfce4/panel/plugins/libstatusnotifier.la %{buildroot}%{_libdir}/libstatusnotifier.la
-#install -Dm 0755 %{buildroot}/usr/lib/xfce4/panel/plugins/libstatusnotifier.so %{buildroot}%{_libdir}/libstatusnotifier.so
-#rm %{buildroot}/usr/lib/xfce4/panel/plugins/libstatusnotifier.* -f
 
 %post
 /sbin/ldconfig
