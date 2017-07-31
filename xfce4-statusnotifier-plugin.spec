@@ -28,14 +28,16 @@ has the freedesktop.org specification.
 %setup -q
 
 %build
-./autogen.sh --prefix=%{_prefix}
+./autogen.sh --prefix=%{_prefix} --disable-static
 %make_build
 
 %install
 %make_install
+find $RPM_BUILD_ROOT -name \*.la -exec rm {} \;
 if [ ! -d %{buildroot}/%{_libdir} ]; then
 mv %{buildroot}/usr/lib %{buildroot}/%{_libdir}
 fi
+
 
 %post
 /sbin/ldconfig
