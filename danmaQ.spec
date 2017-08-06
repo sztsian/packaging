@@ -49,6 +49,9 @@ Icon=%{name}
 Categories=Network
 EOF
 
+%check
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+
 %post
 /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null ||:
 
