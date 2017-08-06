@@ -1,15 +1,15 @@
-%global _icondir %{_datadir}/icons/hicolor
+%global icondir %{_datadir}/icons/hicolor
 %global commit ab838667d53c71c6cf8ac94dd109fcd009460530
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
-
-Name:		danmaQ
+%global reponame danmaQ
+Name:		danmaq
 Version:	0.2
 Release:	1%{?dist}
 Summary:	A small client side Qt program to play danmaku on any screen
 
 License:	GPLv3
 URL:		https://github.com/tuna/danmaQ
-Source0:	%{url}/archive/%{shortcommit}/%{name}-%{shortcommit}.tar.gz
+Source0:	%{url}/archive/%{shortcommit}/%{reponame}-%{shortcommit}.tar.gz
 
 BuildRequires:	qt5-qtx11extras-devel
 BuildRequires:	qt5-qtbase-devel
@@ -20,7 +20,7 @@ BuildRequires:	desktop-file-utils
 DanmaQ is a small client side Qt program to play danmaku on any screen.
 
 %prep
-%setup -q -n %{name}-%{commit}
+%setup -q -n %{reponame}-%{commit}
 
 %build
 mkdir build && cd build
@@ -29,28 +29,28 @@ mkdir build && cd build
 
 %install
 # install 
-install -Dm 0755 build/src/%{name} %{buildroot}%{_bindir}/%{name}
+install -Dm 0755 build/src/%{reponame} %{buildroot}%{_bindir}/%{reponame}
 
 # icon files
 install -Dm0644 src/icons/statusicon.ico    %{buildroot}%{_datadir}/pixmaps/statusicon.ico
 install -Dm0644 src/icons/statusicon.png    %{buildroot}%{_datadir}/pixmaps/statusicon.png
 install -Dm0644 src/icons/statusicon_disabled.png    %{buildroot}%{_datadir}/pixmaps/statusicon_disabled.png
-install -Dm0644 src/icons/statusicon.svg %{buildroot}%{_icondir}/scalable/apps/statusicon.svg
+install -Dm0644 src/icons/statusicon.svg %{buildroot}%{icondir}/scalable/apps/statusicon.svg
 
 
 # desktop file
 install -d %{buildroot}%{_datadir}/applications
-cat > %{buildroot}%{_datadir}/applications/%{name}.desktop <<EOF
+cat > %{buildroot}%{_datadir}/applications/%{reponame}.desktop <<EOF
 [Desktop Entry]
 Type=Application
-Name=%{name}
-Exec=%{name}
-Icon=%{name}
+Name=%{reponame}
+Exec=%{reponame}
+Icon=%{reponame}
 Categories=Network
 EOF
 
 %check
-desktop-file-validate %{buildroot}%{_datadir}/applications/%{name}.desktop
+desktop-file-validate %{buildroot}%{_datadir}/applications/%{reponame}.desktop
 
 %post
 /bin/touch --no-create %{_datadir}/icons/hicolor &>/dev/null ||:
@@ -68,10 +68,10 @@ fi
 %files
 %doc README.md
 %license LICENSE
-%{_bindir}/%{name}
+%{_bindir}/%{reponame}
 %{_datadir}/pixmaps/*
 %{_datadir}/icons/hicolor/*/apps/*
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/%{reponame}.desktop
 
 %changelog
 * Sat Jul 29 2017 Zamir SUN <zsun@fedoraproject.org> - 0.2-1
