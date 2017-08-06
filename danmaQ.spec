@@ -1,6 +1,6 @@
 %global _icondir %{_datadir}/icons/hicolor
-%global _commit ab838667d53c71c6cf8ac94dd109fcd009460530
-%global _shortcommit %(c=%{_commit}; echo ${c:0:7})
+%global commit ab838667d53c71c6cf8ac94dd109fcd009460530
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:		danmaQ
 Version:	0.2
@@ -9,7 +9,7 @@ Summary:	A small client side Qt program to play danmaku on any screen
 
 License:	GPLv3
 URL:		https://github.com/tuna/danmaQ
-Source0:	%{url}/archive/%{_shortcommit}/%{name}-%{_shortcommit}.tar.gz
+Source0:	%{url}/archive/%{shortcommit}/%{name}-%{shortcommit}.tar.gz
 
 BuildRequires:	qt5-qtx11extras-devel
 BuildRequires:	qt5-qtbase-devel
@@ -20,7 +20,7 @@ BuildRequires:	desktop-file-utils
 DanmaQ is a small client side Qt program to play danmaku on any screen.
 
 %prep
-%setup -q -n %{name}-%{_commit}
+%setup -q -n %{name}-%{commit}
 
 %build
 mkdir build && cd build
