@@ -5,7 +5,7 @@ Name:           deepin-calendar
 Version:        1.0.11
 Release:        2%{?dist}
 Summary:        Calendar for Deepin Desktop Environment
-License:        GPLv3
+License:        GPLv3+
 URL:            https://github.com/linuxdeepin/dde-calendar
 Source0:        %{url}/archive/%{version}/%{reponame}-%{version}.tar.gz
 
@@ -14,6 +14,7 @@ BuildRequires:  qt5-qtbase-devel
 BuildRequires:  deepin-tool-kit-devel
 BuildRequires:  deepin-gettext-tools
 BuildRequires:  desktop-file-utils
+Requires:       hicolor-icon-theme
 
 %description
 Calendar for Deepin Desktop Environment.
