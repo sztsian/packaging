@@ -6,10 +6,10 @@ License:        GPLv3+
 URL:            https://github.com/linuxdeepin/deepin-notifications
 Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
 
-BuildRequires:  qt5-qtsvg-devel
-BuildRequires:  qt5-qtdeclarative-devel
-BuildRequires:  deepin-tool-kit-devel
-BuildRequires:  gtk2-devel
+BuildRequires:  pkgconfig(Qt5Svg)
+BuildRequires:  pkgconfig(Qt5Qml)
+BuildRequires:  pkgconfig(dtkutil)
+BuildRequires:  pkgconfig(gtk+-2.0)
 Requires:       dbus
 
 %description
