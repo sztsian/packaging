@@ -31,6 +31,7 @@ BuildRequires: systemd
 
 %package local
 Summary: Publish a service from localhost onto your server - client side
+Obsoletes: portpub-local <= 0-0.2
 
 %description local
 %{summary}.
@@ -38,6 +39,7 @@ Local side package.
 
 %package relay
 Summary: Publish a service from localhost onto your server - server side
+Obsoletes: portpub-relay <= 0-0.2
 
 %description relay
 %{summary}.
