@@ -23,9 +23,10 @@ OneDrive for business is not supported.
 %prep
 %setup -q -n %repo-%{version}
 sed -i 's|dmd|ldmd2|g' Makefile
-sed -i 's|version||g' Makefile
+sed -i 's|version ||g' Makefile
 sed -i '/git/d' Makefile
 sed -i "s|/usr/local|%_prefix|" Makefile
+sed -i "s|DFLAGS =|DFLAGS +=|" Makefile
 echo %{version} >version
 %build
 export DFLAGS="%{_d_optflags}"
