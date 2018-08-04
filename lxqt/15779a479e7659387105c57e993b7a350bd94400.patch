@@ -1,0 +1,26 @@
+From 15779a479e7659387105c57e993b7a350bd94400 Mon Sep 17 00:00:00 2001
+From: rezso <rezso@rezso.net>
+Date: Mon, 11 Jun 2018 18:07:51 +0200
+Subject: [PATCH] Update lxqt-admin-time_zh_TW.desktop
+
+Fix desktop-file-validate errors:
+
+usr/share/applications/lxqt-admin-time.desktop: error: file contains multiple keys named "GenericName[ja]" in group "Desktop Entry"
+usr/share/applications/lxqt-admin-time.desktop: error: file contains multiple keys named "Comment[ja]" in group "Desktop Entry"
+---
+ lxqt-admin-time/translations/lxqt-admin-time_zh_TW.desktop | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/lxqt-admin-time/translations/lxqt-admin-time_zh_TW.desktop b/lxqt-admin-time/translations/lxqt-admin-time_zh_TW.desktop
+index 5f95f75..c27c5b1 100644
+--- a/lxqt-admin-time/translations/lxqt-admin-time_zh_TW.desktop
++++ b/lxqt-admin-time/translations/lxqt-admin-time_zh_TW.desktop
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Name[zh_TW]=日期與時間
+-GenericName[ja]=日期與時間設定
+-Comment[ja]=設定系統的日期與時間
++GenericName[zh_TW]=日期與時間設定
++Comment[zh_TW]=設定系統的日期與時間
+ 
+ #TRANSLATIONS_DIR=translations

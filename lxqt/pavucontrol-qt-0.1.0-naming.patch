@@ -1,0 +1,26 @@
+From 3c45456287b21176c829dfeb802a37ed17fd620b Mon Sep 17 00:00:00 2001
+From: Helio Chissini de Castro <helio@kde.org>
+Date: Tue, 27 Sep 2016 09:54:14 +0200
+Subject: [PATCH] Simply differentiate the namnig to avoid menu duplication
+
+This is not the best solution, but is solve in a temporary base if some
+improved action is find.
+Use an alternative icon could be a possibility, but then the current
+approach follows the icons naming standard pattern and this would
+unlikely break the theme standards
+---
+ src/pavucontrol-qt.desktop.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/pavucontrol-qt.desktop.in b/src/pavucontrol-qt.desktop.in
+index 337d13e..90eb7d7 100644
+--- a/src/pavucontrol-qt.desktop.in
++++ b/src/pavucontrol-qt.desktop.in
+@@ -1,6 +1,6 @@
+ [Desktop Entry]
+ Version=1.0
+-Name=PulseAudio Volume Control
++Name=PulseAudio Volume Control (Qt)
+ GenericName=Volume Control
+ Comment=Adjust the volume level
+ Exec=pavucontrol-qt
